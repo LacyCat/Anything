@@ -1,0 +1,6 @@
+name: Anything
+version: '${version}'
+
+main: cat.lacycat.anything.Anything
+api-version: '26.1.2'
+load: POSTWORLD
