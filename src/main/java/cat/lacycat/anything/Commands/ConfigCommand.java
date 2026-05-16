@@ -14,6 +14,7 @@ public class ConfigCommand implements CommandExecutor {
         this.p = p;
     }
     @Override
+    @SuppressWarnings("ConstantConditions")
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String @NotNull [] args) {
         if (args.length == 0) return false;
         if (args[0].equalsIgnoreCase("reload")) {

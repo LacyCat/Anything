@@ -4,13 +4,11 @@ import cat.lacycat.anything.Managers.ConfigManager;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.Bukkit;
-import org.bukkit.GameMode;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerTeleportEvent;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class OnPlayerTeleport implements Listener {
@@ -30,8 +28,8 @@ public class OnPlayerTeleport implements Listener {
             else {
                 Bukkit.getScheduler().runTaskLater(p, () -> {
                     Entity ent = ev.getPlayer().getSpectatorTarget();
-                    if (ent instanceof Player p) {
-                        p.sendActionBar(Component.text("공기가 서늘해집니다...").color(TextColor.color(0x0E0F37)));
+                    if (ent instanceof Player ply) {
+                        ply.sendActionBar(Component.text("공기가 서늘해집니다...").color(TextColor.color(0x0E0F37)));
                     }
                 },10L);
             }

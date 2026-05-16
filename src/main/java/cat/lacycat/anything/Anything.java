@@ -9,8 +9,7 @@ public final class Anything extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        ConfigManager.load(this);
-        RegisterManager.registerListeners(this);
+        RegisterManager.initmanually(this);
     }
 
     @Override
