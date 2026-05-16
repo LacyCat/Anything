@@ -10,12 +10,14 @@ public class ConfigManager {
 
     /**
      * 인자에 따라 InfiniDeath의 설정값을 반환합니다.
+     * 배열 크기 오류 검증이 있음
      * 0 - Enabled
      * 1 - CanSpectateOthers
      * @param arg 인자
      * @return 설정값
      */
     public static boolean get_infd(short arg) {
+        if (arg < 0 || arg >= infd.length) return false;
         return infd[arg];
     }
     /**

@@ -32,6 +32,8 @@ public class ConfigCommand implements CommandExecutor {
                 sender.sendMessage("InfiniDeath 의 Enable 설정을 수정하는 것은 의도치 않은 동작을 유발할 수 있습니다.");
             }
         }
+        p.saveConfig();
+        ConfigManager.reload(p);
         return true;
     }
 }
