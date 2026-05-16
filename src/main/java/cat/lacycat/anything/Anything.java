@@ -1,6 +1,5 @@
 package cat.lacycat.anything;
 
-import cat.lacycat.anything.Managers.ConfigManager;
 import cat.lacycat.anything.Managers.RegisterManager;
 import org.bukkit.plugin.java.JavaPlugin;
 

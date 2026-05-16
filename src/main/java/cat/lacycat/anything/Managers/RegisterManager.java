@@ -9,8 +9,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.Objects;
 
 public class RegisterManager {
+    @SuppressWarnings("unused")
     public static void initmanually(JavaPlugin p) {
-        ConfigManager.load(p);
+        boolean b = ConfigManager.load(p);
         registerCommands(p);
         registerListeners(p);
     }

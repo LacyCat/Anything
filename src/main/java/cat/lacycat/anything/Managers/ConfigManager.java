@@ -23,7 +23,7 @@ public class ConfigManager {
      * @param p 메인 플러그인 인스턴스
      * @return 설정 로드가 정상적으로 되었는지 확인합니다.
      */
-    @SuppressWarnings("unused")
+    @SuppressWarnings("ReturnValueIgnored")
     public static boolean load(JavaPlugin p) {
         p.saveDefaultConfig();
         return reload(p);
