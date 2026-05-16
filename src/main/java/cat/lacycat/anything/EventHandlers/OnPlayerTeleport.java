@@ -7,6 +7,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.plugin.Plugin;
@@ -17,9 +18,10 @@ public class OnPlayerTeleport implements Listener {
     public OnPlayerTeleport(JavaPlugin p) {
         this.p = p;
     }
+    @EventHandler
     public void OnPlayerTeleportEvent(PlayerTeleportEvent ev) {
-        if (ConfigManager.infd_enabled){
-            if (!ConfigManager.infd_canSpectateOthers) {
+        if (ConfigManager.get_infd((short) 0)){
+            if (!ConfigManager.get_infd((short) 1)) {
                 if (ev.getCause() == PlayerTeleportEvent.TeleportCause.SPECTATE) {
                     ev.setCancelled(true);
                     ev.getPlayer().sendActionBar(Component.text("다른 플레이어를 관전하는 것은 금지되어있습니다!"));

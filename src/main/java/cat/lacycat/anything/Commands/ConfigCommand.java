@@ -22,6 +22,7 @@ public class ConfigCommand implements CommandExecutor {
             return true;
         }
         if (args[0].equalsIgnoreCase(InfiniDeathKey.root)) {
+            if (args.length < 3) return false;
             if (args[1].equalsIgnoreCase(InfiniDeathKey.canSpectateOthers.replace(InfiniDeathKey.root + ".","")) && args[2] != null) {
                 if (args[2].isBlank()) return false;
                 p.getConfig().set(InfiniDeathKey.canSpectateOthers,Boolean.parseBoolean(args[2]));

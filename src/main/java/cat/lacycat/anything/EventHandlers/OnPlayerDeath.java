@@ -10,7 +10,7 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 public class OnPlayerDeath implements Listener {
     @EventHandler
     public void OnPlayerDeathEvent(PlayerDeathEvent ev) {
-        if (ConfigManager.infd_enabled) {
+        if (ConfigManager.get_infd((short) 0)) {
             Player p = ev.getPlayer();
             p.setGameMode(GameMode.SPECTATOR);
         }
